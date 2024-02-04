@@ -1,6 +1,3 @@
-/* Import MUI theme for color adaptation */
-@import "@mui/material/styles/theme";
-
 * {
     transition: all 10ms ease-in;
 }

@@ -12,19 +12,19 @@
     ],
     "action": {
       "default_icon": {
-        "16": "crow.png",
-        "48": "crow.png",
-        "128": "crow.png"
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
       },
-      "default_popup": "popup.html"
+      "default_popup": "./src/index.html"
     },
     "icons": {
-      "16": "crow_solid.png",
-      "48": "crow_solid.png",
-      "128": "crow_solid.png"
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
     },
     "background": {
-      "service_worker": "background.js"
+      "service_worker": "./src/background.js"
     },
     "content_security_policy": {
       "extension_pages": "script-src 'self'; object-src 'self'"
