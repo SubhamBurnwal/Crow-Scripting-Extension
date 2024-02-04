@@ -1,10 +1,9 @@
 {
     "manifest_version": 3,
     "name": "Crow",
-    "version": "1.0",
-    "description": "Save and run scripts in tabs",
+    "version": "0.1.0",
+    "description": "Save and run scripts in tabs. https://github.com/SubhamBurnwal/Crow-Scripting-Extension",
     "author": "ᛊᚢᛒᚻᚨᛗ",
-    "website": "",
     "permissions": [
       "scripting",
       "activeTab", 
