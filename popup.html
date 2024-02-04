@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script Saver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h3>Lazy Editor:</h3>
+    <textarea id="scriptInput" placeholder="Type or Paste here"></textarea>
+    
+    <div class="row">
+      <button id="runBtn">Run</button>
+      <button id="saveBtn">Save</button>
+    </div>
+    <input id="nameInput" placeholder="Enter script name">
+    <div class="row">
+      <button id="loadBtn">Load</button>
+      <button id="purgeBtn">Purge</button>
+    </div>
+    <div class="row">
+      <select id="scriptSelect"><option value="-1">Select script</option></select>
+      <button id="quickRunBtn">ᚱ</button>
+    </div>
+  </div>
+
+  <script src="./popup.js"></script>
+</body>
+</html>

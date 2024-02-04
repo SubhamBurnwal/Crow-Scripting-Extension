@@ -1,0 +1,195 @@
+/* Import MUI theme for color adaptation */
+@import "@mui/material/styles/theme";
+
+* {
+    transition: all 10ms ease-in;
+}
+
+:root {
+  --color-primary: whitesmoke;
+  --background-primary: #333;
+  --highlight-primary: bisque;
+  --background-secondary: #253aba;
+  --color-secondary: #95aafa;
+  --highlight-secondary: #ccc;
+  
+  --btn-bg-primary: #253aba;
+  --btn-color-primary: whitesmoke;
+  
+  /* Light mode colors */
+  --light-color-primary: #333;
+  --light-background-primary: whitesmoke;
+  --light-highlight-primary: #454545;
+  --light-background-secondary: #e5f0ff;
+  --light-color-secondary: #354afa;
+  --light-highlight-secondary: #ccc;
+  
+  --light-btn-bg-primary: white;
+  --light-btn-color-primary: #333;
+}
+
+/* Apply appropriate colors based on system preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-primary: var(--light-color-primary);
+    --background-primary: var(--light-background-primary);
+    --highlight-primary: var(--light-highlight-primary);
+    --background-secondary: var(--light-background-secondary);
+    --color-secondary: var(--light-color-secondary);
+    --highlight-secondary: var(--light-highlight-secondary);
+    
+    --btn-bg-primary: var(--light-btn-bg-primary);
+    --btn-color-primary: var(--light-btn-color-primary);
+  }
+}
+
+/* Base styles for scrollbar */
+*::-webkit-scrollbar {
+  width: 10px; /* Adjust width as needed */
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--background-secondary); /* Use secondary background color */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--highlight-secondary); /* Use secondary highlight color */
+  border-radius: 5px;
+}
+
+/* Base styles for container and text */
+.container {
+  font-family: sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 300px;
+  width: calc(100% - 55px);
+  min-width: fit-content;
+  height: fit-content;
+  max-height: 90vh;
+  color: var(--highlight-primary);
+}
+
+body,
+html {
+  background: var(--background-primary);
+  width: 500px;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+/* Textarea styles with MUI theme integration */
+textarea {
+  resize: vertical;
+  min-height: 20px;
+  height: 280px;
+  padding: 10px;
+  min-width: 280px;
+  width: calc(100% - 20px);
+  border-radius: 5px;
+  min-height: 20px;
+}
+
+textarea {
+  /* Adapt to theme */
+  border: 1px solid var(--highlight-secondary);
+  background-color: var(--background-secondary);
+  color: var(--color-primary);
+}
+
+/* Button styles with MUI theme integration */
+button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Adapt to theme */
+  border: none;
+  background: var(--btn-bg-primary);
+  color: var(--btn-color-primary);
+  width: 100%;
+  margin-right: 20px;
+  transition: all 300ms ease-in;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* Button hover styles, adaptive to theme */
+button:hover {
+  color: var(--btn-bg-primary); 
+  background: var(--btn-color-primary);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+button:last-of-type {
+  margin-right: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Optional: Select styles with MUI theme integration */
+input,
+select {
+  padding: 10px;
+  border-radius: 5px;
+  /* Adapt to theme */
+  background-color: var(--background-secondary);
+  border: 1px solid var(--highlight-secondary);
+  color: var(--color-secondary);
+}
+
+select {
+  width: 100%;
+  margin-right: 20px;
+
+  border: 0;
+  outline: 1px solid var(--highlight-secondary);
+  border-right: 10px solid transparent;
+}
+
+button#quickRunBtn {
+  width: 40px;
+  background: green;
+  color:greenyellow;
+  font-size: larger;
+  font-weight: 800;
+}
+button#quickRunBtn:hover {
+  background: white;
+  color: green;
+}
+
+select:focus {
+  outline: 2px solid black;
+}
+
+select:first-child {
+  color: var(--highlight-primary);
+  font-size: larger;
+}
+
+::placeholder {
+  color: var(--highlight-primary);
+  font-size: larger;
+}
+
+::-moz-placeholder { /* Firefox */
+  color: var(--highlight-primary);
+  font-size: larger;
+  opacity: 1;
+}
+::-ms-input-placeholder { /* Edge 12 -18 */ 
+  color: var(--highlight-primary);
+  font-size: larger;
+}
+::-webkit-input-placeholder {
+  color: var(--highlight-primary);
+  font-size: larger;
+}
+

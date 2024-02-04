@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Crow",
+    "version": "1.0",
+    "description": "Save and run scripts in tabs",
+    "author": "ᛊᚢᛒᚻᚨᛗ",
+    "website": "",
+    "permissions": [
+      "scripting",
+      "activeTab", 
+      "storage"
+    ],
+    "action": {
+      "default_icon": {
+        "16": "crow.png",
+        "48": "crow.png",
+        "128": "crow.png"
+      },
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "crow_solid.png",
+      "48": "crow_solid.png",
+      "128": "crow_solid.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+  }
