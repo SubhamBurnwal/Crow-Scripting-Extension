@@ -1,5 +1,5 @@
 * {
-    transition: all 10ms ease-in;
+  transition: all 10ms ease-in;
 }
 
 :root {
@@ -9,10 +9,10 @@
   --background-secondary: #253aba;
   --color-secondary: #95aafa;
   --highlight-secondary: #ccc;
-  
+
   --btn-bg-primary: #253aba;
   --btn-color-primary: whitesmoke;
-  
+
   /* Light mode colors */
   --light-color-primary: #333;
   --light-background-primary: whitesmoke;
@@ -20,7 +20,7 @@
   --light-background-secondary: #e5f0ff;
   --light-color-secondary: #354afa;
   --light-highlight-secondary: #ccc;
-  
+
   --light-btn-bg-primary: white;
   --light-btn-color-primary: #333;
 }
@@ -34,7 +34,7 @@
     --background-secondary: var(--light-background-secondary);
     --color-secondary: var(--light-color-secondary);
     --highlight-secondary: var(--light-highlight-secondary);
-    
+
     --btn-bg-primary: var(--light-btn-bg-primary);
     --btn-color-primary: var(--light-btn-color-primary);
   }
@@ -46,11 +46,15 @@
 }
 
 *::-webkit-scrollbar-track {
-  background-color: var(--background-secondary); /* Use secondary background color */
+  background-color: var(
+    --background-secondary
+  ); /* Use secondary background color */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--highlight-secondary); /* Use secondary highlight color */
+  background-color: var(
+    --highlight-secondary
+  ); /* Use secondary highlight color */
   border-radius: 5px;
 }
 
@@ -114,7 +118,7 @@ button {
 }
 /* Button hover styles, adaptive to theme */
 button:hover {
-  color: var(--btn-bg-primary); 
+  color: var(--btn-bg-primary);
   background: var(--btn-color-primary);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -153,7 +157,7 @@ select {
 button#quickRunBtn {
   width: 40px;
   background: green;
-  color:greenyellow;
+  color: greenyellow;
   font-size: larger;
   font-weight: 800;
 }
@@ -176,12 +180,14 @@ select:first-child {
   font-size: larger;
 }
 
-::-moz-placeholder { /* Firefox */
+::-moz-placeholder {
+  /* Firefox */
   color: var(--highlight-primary);
   font-size: larger;
   opacity: 1;
 }
-::-ms-input-placeholder { /* Edge 12 -18 */ 
+::-ms-input-placeholder {
+  /* Edge 12 -18 */
   color: var(--highlight-primary);
   font-size: larger;
 }
@@ -189,4 +195,3 @@ select:first-child {
   color: var(--highlight-primary);
   font-size: larger;
 }
-

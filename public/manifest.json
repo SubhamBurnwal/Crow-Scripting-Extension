@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Crow-Debug",
+    "name": "Crow",
     "version": "0.1.0",
     "description": "Save and run scripts in tabs. https://github.com/SubhamBurnwal/Crow-Scripting-Extension",
     "author": "ᛊᚢᛒᚻᚨᛗ",
@@ -11,19 +11,19 @@
     ],
     "action": {
       "default_icon": {
-        "16": "./public/logo.png",
-        "48": "./public/logo.png",
-        "128": "./public/logo.png"
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
       },
       "default_popup": "./index.html"
     },
     "icons": {
-      "16": "./public/logo.png",
-      "48": "./public/logo.png",
-      "128": "./public/logo.png"
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
     },
     "background": {
-      "service_worker": "./src/background.js",
+      "service_worker": "./service-worker.js",
       "type": "module"
     },
     "content_security_policy": {

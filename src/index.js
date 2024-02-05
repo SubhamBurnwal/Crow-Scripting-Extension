@@ -1,9 +1,51 @@
-let runBtn, quickRunBtn, saveBtn, loadBtn, purgeBtn;
+// import './index.css';
+let runBtn, quickRunBtn, saveBtn, loadBtn, purgeBtn, scriptSelect, scriptInput, nameInput;
+
+document.onreadystatechange = ()=>{
+  document.getElementById("app").innerHTML = 
+    `<div class="container">`+
+      `<h3>Lazy Editor:</h3>`+
+      `<textarea id="scriptInput" placeholder="Type or Paste here"></textarea>`+
+      `<div class="row">`+
+        `<button id="runBtn">Run</button>`+
+        `<button id="saveBtn">Save</button>`+
+      `</div>`+
+      `<input id="nameInput" placeholder="Enter script name">`+
+      `<div class="row">`+
+        `<button id="loadBtn">Load</button>`+
+        `<button id="purgeBtn">Purge</button>`+
+      `</div>`+
+      `<div class="row">`+
+        `<select id="scriptSelect"><option value="-1">Select script</option></select>`+
+        `<button id="quickRunBtn">ᚱ</button>`+
+      `</div>`+
+    `</div>`;
+
+  runBtn = document.getElementById("runBtn");
+  quickRunBtn = document.getElementById("quickRunBtn");
+  saveBtn = document.getElementById("saveBtn");
+  loadBtn = document.getElementById("loadBtn");
+  purgeBtn = document.getElementById("purgeBtn");
+  scriptSelect = document.getElementById("scriptSelect");
+  scriptInput = document.getElementById("scriptInput");
+  nameInput = document.getElementById("nameInput");
+  
+  runBtn.onclick=runScript;
+  quickRunBtn.onclick=quickRunScript;
+  saveBtn.onclick=saveScript;
+  loadBtn.onclick=loadScript;
+  purgeBtn.onclick=purgeScript;
+  
+  populateSelector();
+  
+  nameInput.onchange = e=>populateSelector(e.target.value.trim());
+};
+
+// ----------------------------------------------
 
 // Fetch saved scripts and populate the select dropdown
 function populateSelector(keyword=null){
   chrome.storage.sync.get({ scripts: [] }, function(data) {
-    const scriptSelect = document.getElementById("scriptSelect");
     scriptSelect.innerHTML = "<option value='-1'>Select script</option>";
     
     const scripts = data.scripts;
@@ -24,25 +66,9 @@ function populateSelector(keyword=null){
   });
 }
 
-document.onreadystatechange = ()=>{
-  runBtn = document.getElementById("runBtn").onclick=runScript;
-  quickRunBtn = document.getElementById("quickRunBtn").onclick=quickRunScript;
-  saveBtn = document.getElementById("saveBtn").onclick=saveScript;
-  loadBtn = document.getElementById("loadBtn").onclick=loadScript;
-  purgeBtn = document.getElementById("purgeBtn").onclick=purgeScript;
-  populateSelector();
-
-  const nameInput = document.getElementById("nameInput");
-  nameInput.onchange = (e=>{
-    populateSelector(e.target.value.trim());
-  });
-};
-
 // Save a new script
 function saveScript() {
   
-  const scriptInput = document.getElementById("scriptInput");
-  const nameInput = document.getElementById("nameInput");
   const script = scriptInput.value.trim();
   const name = nameInput.value.trim();
   if (script !== "" && name !== "") {
@@ -62,9 +88,6 @@ function saveScript() {
 function loadScript() {
   loadBtn.onclick=()=>{};
   
-  const scriptSelect = document.getElementById("scriptSelect");
-  const scriptInput = document.getElementById("scriptInput");
-  const nameInput = document.getElementById("nameInput");
   scriptInput.value = scriptSelect.value;
   nameInput.value = scriptSelect.selectedOptions[0].text;
   setTimeout(()=>{
@@ -75,9 +98,7 @@ function loadScript() {
 // Run the selected script
 function runScript() {
   runBtn.onclick=()=>{};
-  
-  const scriptInput = document.getElementById("scriptInput");
-  
+    
   if (scriptInput.value != "") {
     chrome.runtime.sendMessage({ action: "runScript", code: scriptInput.value });
   }
@@ -90,7 +111,6 @@ function runScript() {
 function quickRunScript() {
   quickRunBtn.onclick=()=>{};
   
-  const scriptSelect = document.getElementById("scriptSelect");
   const selectedIndex = scriptSelect.options.selectedIndex;
   
   if (selectedIndex != 0) {
@@ -103,7 +123,6 @@ function quickRunScript() {
 }
 
 function purgeScript() {
-  const scriptSelect = document.getElementById("scriptSelect");
   const selectedIndex = scriptSelect.options.selectedIndex; 
   
   if (selectedIndex != 0) {

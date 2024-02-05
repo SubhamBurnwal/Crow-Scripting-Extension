@@ -49,3 +49,5 @@ function purgeScript(name) {
     chrome.storage.sync.set({ scripts: scripts });
   });
 }
+
+export {}
