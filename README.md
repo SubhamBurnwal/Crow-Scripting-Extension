@@ -10,15 +10,13 @@ Crow is a short script/browser extension that allows you to inject other scripts
 #### ToDo
 This is not meant to be your go-to automation tool, try Selenium, etc for that.
 I will be adding ability to import from repositories and other sources for my needs, but once again, its not meant to be a full-fletched automation tool. 
-
+I am working on porting to Firefox since its my main browser.
 
 ## Installation
 
 **If you just want to use this extension,**
 1. Download the latest bundle (.crx) from [here](https://github.com/SubhamBurnwal/Crow-Scripting-Extension/tree/master/bundles).
 2. Drag it over your browser window and confirm installation.
-
-For Firefox, you can download it from here:
 
 Alternatively, if you want to debug and extend the code:
 
